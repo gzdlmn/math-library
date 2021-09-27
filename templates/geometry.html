@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block title %}
+{% endblock %}
+{% block body %}
+    <section class="container-fluid">
+        <h3 class="text-center">Geometry</h3>
+        <p class="text-center"><a style="text-decoration:none;" href="{% url 'library:geometry' %}">refresh</a></p>
+        <div class="row justify-content-around">
+            <div style="background-color:#FFFACD;height:300px;" class="col-lg-3 col-md-6 equations mx-auto text-center my-2">
+                <h3 class="text-muted text-center"><mark>Circle</mark></h3>
+                <div class="container h-100">
+                    <div class="row align-items-center h-50">
+                        <div class="col-12 mx-auto text-center">
+                            <i style="font-size:2rem;color:green;" class="bi bi-circle"></i>
+                            <form method="POST">
+                            {% csrf_token %}
+                                {% for field in circleform %}
+                                    {{field}}
+                                {% endfor %}
+                                <button class="btn btn-success">Circle</button>
+                            </form>
+                            <p class="text-muted">area of circle &equals;{{circlearea}}</p>
+                            <p class="text-muted">circumference of a circle &equals;{{circleenvironment}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="background-color:#FCDFFF;height:300px;" class="col-lg-3 col-md-6 factorial mx-auto text-center my-2">
+                <h3 class="text-muted text-center"><mark>Rectangle</mark></h3>
+                <div class="container h-100">
+                    <div class="row align-items-center h-50">
+                        <div class="col-12 mx-auto text-center">
+                            <i style="font-size:2rem;color:green;" class="bi bi-file"></i>
+                            <form method="POST">
+                            {% csrf_token %}
+                            {% for field in rectangleform %}
+                                {{field}}
+                            {% endfor %}
+                            <button class="btn btn-success">Rectangle</button>
+                            </form>
+                            <p class="text-muted">area of rectangle &equals;{{arearectangle}}</p>
+                            <p class="text-muted">circumference of a rectangle &equals;{{rectangleenvironment}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="background-color:#E0FFFF;height:300px;" class="col-lg-3 col-md-6 squareroot mx-auto text-center my-2">
+                <h3 class="text-muted text-center"><mark>Cube</mark></h3>
+                <div class="container h-100">
+                    <div class="row align-items-center h-50">
+                        <div class="col-12 mx-auto text-center">
+                            <i style="font-size:2rem;color:green;" class="bi bi-box"></i>
+                            <form method="POST">
+                            {% csrf_token %}
+                            {% for field in cubeform %}
+                                {{field}}
+                            {% endfor %}
+                            <button class="btn btn-success">Cube</button>
+                            </form>
+                            <p class="text-muted">area of cube &equals;{{areacube}}</p>
+                            <p class="text-muted">volume of a cube &equals;{{cubevolume}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-around">
+            <div style="background-color:#c8f4ff;height:300px;" class="col-lg-3 col-md-6 exponents mx-auto text-center my-2">
+                <h3 class="text-muted"><mark>Cylinder</mark></h3>
+                <div class="container h-100">
+                    <div class="row align-items-center h-50">
+                        <div class="col-12 mx-auto text-center">
+                            <form method="POST">
+                            {% csrf_token %}
+                            {% for field in cylinderform %}
+                                {{field}}
+                            {% endfor %}
+                            <button class="btn btn-success">Cylinder</button>
+                            </form>
+                            <p class="text-muted">base area of cylinder &equals;{{cylinderbasearea}}</p>
+                            <p class="text-muted">lateral surface of cylinder &equals;{{cylinderlateralsurface}}</p>
+                            <p class="text-muted">total area of cylinder &equals;{{cylindertotalarea}}</p>
+                            <p class="text-muted">volume of cylinder &equals;{{cylindervolume}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div style="background-color:#c1ecbe;height:300px;" class="col-lg-3 col-md-6 exponents mx-auto text-center my-2">
+                <h3 class="text-muted"><mark>Sphere</mark></h3>
+                <div class="container h-100">
+                    <div class="row align-items-center h-50">
+                        <div class="col-12 mx-auto text-center">
+                            <form method="POST">
+                            {% csrf_token %}
+                            {% for field in sphereform %}
+                                {{field}}
+                            {% endfor %}
+                            <button class="btn btn-success">Sphere</button>
+                            </form>
+                            <p class="text-muted">total area of sphere &equals;{{totalsurfacesphere}}</p>
+                            <p class="text-muted">volume of sphere &equals;{{totalvolumesphere}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

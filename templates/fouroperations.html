@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}
+    Four Operations
+{% endblock %}
+{% block body %}
+<section class="container">
+    <div class="row">
+        <div class="col-md-6 col-lg-4">
+            <div class="card p-5">
+                <img src="/media/calculator-fill.svg" class="card-img-top p-5" alt="Four Operations">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Four Operations</h5>
+                    <div class="d-flex justify-content-around">
+                       <div class="col-12 mx-auto text-center">
+                           <form method="POST">
+                               {% csrf_token %}
+                               {% for field in form %}
+                                    {{field.label}}{{field}}
+                               {% endfor %}
+                               <button class="btn btn-success btn-block">Calculate</button>
+                           </form>
+                       </div>
+                    </div>
+                </div>
+                <div class="card-footer text-muted text-center">
+                    {{answer}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

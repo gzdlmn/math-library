@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% block title %}
+{% endblock %}
+{% block body %}
+    <section class="container-fluid mt-3">
+        <h1 class="text-center"><mark>POST-IT NOTES</mark></h1>
+        <p class="text-center"><a style="text-decoration:none;" href="{% url 'library:functions' %}">refresh notes</a></p>
+        <div class="row justify-content-around row1">
+            <div style="background-color:#FFFACD;height:300px;" class="col-lg-3 col-md-6 equations mx-auto text-center my-2">
+                <h3 class="text-muted text-center"><mark>ax<sup>2</sup>+bx+c</mark></h3>
+                <div class="container h-100">
+                    <div class="row align-items-center h-50">
+                        <div class="col-12 mx-auto text-center">
+                            <h5 class="text-center">How to find the roots of an quadratic equations?</h5>
+                            <form method="POST">
+                            {% csrf_token %}
+                            {% for field in quadraticequationsform %}
+                                {{field}}
+                            {% endfor %}
+                            <button class="btn btn-success btn-block">Calculate the Quadratic Equations</button>
+                            </form>
+                            <h5>{{x1}}</h5>
+                            <h5>{{x2}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="background-color:#FCDFFF;height:300px;" class="col-lg-3 col-md-6 factorial mx-auto text-center my-2">
+                <h3 class="text-muted text-center"><mark>n!</mark></h3>
+                <div class="container h-100">
+                    <div class="row align-items-center h-50">
+                        <div class="col-12 mx-auto text-center">
+                            <h5 class="text-center">How to find the factorial?</h5>
+                            <form method="POST">
+                                {% csrf_token %}
+                                {% for field in factorialform %}
+                                    {{field}}
+                                {% endfor %}
+                                <button class="btn btn-success">Calculate the Factorial</button>
+                            </form>
+                            <h5>{{a}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="background-color:#E0FFFF;height:300px;" class="col-lg-3 col-md-6 squareroot mx-auto text-center my-2">
+                <h3 class="text-muted text-center"><mark>&Sqrt;x</mark></h3>
+                <div class="container h-100">
+                    <div class="row align-items-center h-50">
+                        <div class="col-12 mx-auto text-center">
+                            <h5 class="text-center">How to find the square root?</h5>
+                            <form method="POST">
+                                {% csrf_token %}
+                                {% for field in squarerootform %}
+                                    {{field}}
+                                {% endfor %}
+                                <button class="btn btn-success">Calculate the Square Root</button>
+                            </form>
+                            <h5>{{result}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-around row2">
+            <div style="background-color:#c8f4ff;height:300px;" class="col-lg-3 col-md-6 exponents mx-auto text-center my-2">
+                <h3 class="text-muted"><mark>x<sup>y</sup></mark></h3>
+                <div class="container h-100">
+                    <div class="row align-items-center h-50">
+                        <div class="col-12 mx-auto text-center">
+                            <h5>How to find the exponents?</h5>
+                            <form method="POST">
+                                {% csrf_token %}
+                                {% for field in exponentsform %}
+                                    {{field}}
+                                {% endfor %}
+                                <button class="btn btn-success">Calculate the Factorial</button>
+                            </form>
+                            <h5>{{resultexpo}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="background-color:#c1ecbe;height:300px;" class="col-lg-3 col-md-6 logarithm mx-auto text-center my-2">
+                <h3 class="text-muted"><mark>log<sub>a</sub>b</mark></h3>
+                <div class="container h-100">
+                    <div class="row align-items-center h-50">
+                        <div class="col-12 mx-auto text-center">
+                            <h5>How to find the logarithm?</h5>
+                            <form method="POST">
+                                {% csrf_token %}
+                                {% for field in logarithmform %}
+                                    {{field}}
+                                {% endfor %}
+                                <button class="btn btn-success">Calculate the Logarithm</button>
+                            </form>
+                            <h5>{{resultlog}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="background-color:#ffe8e5;height:300px;" class="col-lg-3 col-md-6 ebob mx-auto text-center my-2">
+                <h3 class="text-muted"><mark>E.B.O.B(a,b)</mark></h3>
+                <div class="container h-100">
+                    <div class="row align-items-center h-50">
+                        <div class="col-12 mx-auto text-center">
+                            <h5>How to find the ebob?</h5>
+                            <form method="POST">
+                                {% csrf_token %}
+                                {% for field in ebobform %}
+                                    {{field}}
+                                {% endfor %}
+                                <button class="btn btn-success">Calculate the Ebob</button>
+                            </form>
+                            <h5>{{resultebob}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-around row3">
+            <div style="background-color:#ddcef4;height:300px;" class="col-lg-3 col-md-6 degreeorradian mx-auto text-center my-2">
+                <h3 class="text-muted"><mark>Degree<i class="bi bi-arrow-left-right"></i>Radian</mark></h3>
+                <div class="container h-100">
+                    <div class="row align-items-center h-50">
+                        <div class="col-12 mx-auto text-center">
+                            <h5>How do you convert from radians to degrees/degrees to radians...?</h5>
+                            <p>180° = π radian</p>
+                            <form method="POST">
+                                {% csrf_token %}
+                                {% for field in degreeradianform %}
+                                    {{field}}
+                                {% endfor %}
+                                <button class="btn btn-success">Calculate the Degree-Radian</button>
+                            </form>
+                            <h5>{{resultdegreeorradian}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}
+{% endblock %}
+{% block body %}
+    <header class="container-fluid">
+        <h5 class="text-center">{{today}}</h5>
+        <div class="row">
+            <div class="col-md-6">
+                <p class="text-center"><mark>&Pcy;&equals;{{pi}}</mark></p>
+            </div>
+            <div class="col-md-6">
+                <p class="text-center"><mark>&iecy;&equals;{{e}}</mark></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-xl-3 my-2">
+                <div class="card shadow mx-auto text-center" style="width: 18rem;background-color:gainsboro;">
+                    <div style="height:100px;" class="card-img">
+                        <div class="container h-100">
+                            <div class="row align-items-center h-100">
+                                <div class="col-12 mx-auto text-center">
+                                    <i style="font-size:3rem;color:#5cb85c;" class="bi bi-calculator-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Calculate Four Operations</h5>
+                        <p class="card-text text-center">Only + , -, *, /</p>
+                        <a href="{% url 'library:fouroperations' %}" class="btn btn-link">Calculate Four Operations</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3 my-2">
+                <div class="card shadow mx-auto text-center" style="width: 18rem;background-color:gainsboro;">
+                     <div style="height:100px;" class="card-img">
+                        <div class="container h-100">
+                            <div class="row align-items-center h-100">
+                                <div class="col-12 mx-auto text-center">
+                                    <i style="font-size:3rem;color:#5cb85c;" class="bi bi-exclamation-triangle-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Trigonometry</h5>
+                        <p class="card-text text-center">sin(&alpha;)</p>
+                        <p class="card-text text-center">cos(&alpha;)</p>
+                        <p class="card-text text-center">tan(&alpha;)</p>
+                        <p class="card-text text-center">cot(&alpha;)</p>
+                        <p class="card-text text-center">sec(&alpha;)</p>
+                        <p class="card-text text-center">cosec(&alpha;)</p>
+                        <a href="{% url 'library:trigonometry' %}" class="btn btn-link">Calculate trigonometry</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3 my-2">
+                <div class="card shadow mx-auto text-center" style="width: 18rem;background-color:gainsboro;">
+                    <div style="height:100px;" class="card-img">
+                        <div class="container h-100">
+                            <div class="row align-items-center h-100">
+                                <div class="col-12 mx-auto text-center">
+                                    <i style="font-size:3rem;color:#5cb85c;" class="bi bi-chat-dots-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Solution of some functions</h5>
+                        <p class="card-text text-center">Quadratic Equations</p>
+                        <p class="card-text text-center">Factorial</p>
+                        <p class="card-text text-center">Square Root</p>
+                        <p class="card-text text-center">Exponents</p>
+                        <p class="card-text text-center">Logarithm</p>
+                        <p class="card-text text-center">Ebob</p>
+                        <a href="{% url 'library:functions' %}" class="btn btn-link">Calculate some Functions</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3 my-2">
+                <div class="card shadow mx-auto text-center" style="width: 18rem;background-color:gainsboro;">
+                    <div style="height:100px;" class="card-img">
+                        <div class="container h-100">
+                            <div class="row align-items-center h-100">
+                                <div class="col-12 mx-auto text-center">
+                                    <i style="font-size:3rem;color:#5cb85c;" class="bi bi-box"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Area and volume calculations</h5>
+                        <p class="card-text text-center">Circle</p>
+                        <p class="card-text text-center">Factorial</p>
+                        <p class="card-text text-center">Square Root</p>
+                        <p class="card-text text-center">Exponents</p>
+                        <p class="card-text text-center">Logarithm</p>
+                        <p class="card-text text-center">Ebob</p>
+                        <a href="{% url 'library:geometry' %}" class="btn btn-link">Calculate geometry</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+bilgisayarın özerk numarası {{current_machine_id}}
+{% endblock %}

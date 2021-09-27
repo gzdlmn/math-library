@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}
+    Trigonometry Operations
+{% endblock %}
+{% block body %}
+    <div class="container-fluid mt-3">
+        <div class="row justify-content-around">
+            <div class="col-lg-6 mx-auto text-center">
+                <form method="POST">
+                    <h3 class="text-muted">Enter the value you want to calculate</h3>
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {{field}}
+                    {% endfor %}
+                    <button class="btn btn-success">Calculate</button>
+                </form>
+                <hr/>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+           <h4 class="text-center text-success">radian = (180 degree)/&#928</h4>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-4">
+                <table class="table table-striped">
+                    <thead>
+                        <th scope="col">Value</h3></th>
+                        <th scope="col">Radian</h3></th>
+                        <th scope="col">Degree</h3></th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Sin( {{value}} )&equals;</th>
+                            <td>{{a}}</td>
+                            <td>{{adegree}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Cos( {{value}} )&equals;</th>
+                            <td>{{b}}</td>
+                            <td>{{bdegree}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tan( {{value}} )&equals;</th>
+                            <td>{{c}}</td>
+                            <td>{% if value == 90 or value == 270 %}&#8734;{% else %}{{cdegree}}{% endif %}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Cot( {{value}} )&equals;</th>
+                            <td>{% if value == 0 %}&#8734;{% else %}{{d}}{% endif %}</td>
+                            <td>{% if value == 0 or value == 180 or value == 360 %}&#8734;{% else %}{{ddegree}}{% endif %}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Sec( {{value}} )&equals;</th>
+                            <td>{{e}}</td>
+                            <td>{% if value == 90 or value == 270 %}&#8734;{% else %}{{edegree}}{% endif %}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Cosec( {{value}} )&equals;</th>
+                            <td>{% if value == 0 %}&#8734;{% elif value != 0 %}{{f}}{% endif %}</td>
+                            <td>{% if value == 0 or value == 180 %}&#8734;{% else %}{{fdegree}}{% endif %}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
