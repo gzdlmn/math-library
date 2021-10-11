@@ -5,12 +5,12 @@
 {% block body %}
 <section class="container">
     <div class="row">
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-4 mx-auto">
             <div class="card p-5">
                 <img src="/media/calculator-fill.svg" class="card-img-top p-5" alt="Four Operations">
                 <div class="card-body">
                     <h5 class="card-title text-center">Four Operations</h5>
-                    <div class="d-flex justify-content-around">
+                    <div class="row">
                        <div class="col-12 mx-auto text-center">
                            <form method="POST">
                                {% csrf_token %}
